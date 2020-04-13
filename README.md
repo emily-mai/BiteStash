@@ -1,8 +1,11 @@
 # CS 100 Programming Project
 
 Group members:
+
 Christian Torres : ctorr016@ucr.edu
+
 Emily Mai : cmai007@ucr.edu
+
 
 Title: Pantry to-go (tentatively)
 
