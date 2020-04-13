@@ -2,9 +2,9 @@
 
 Group members:
 
-Christian Torres : ctorr016@ucr.edu
+	Christian Torres : ctorr016@ucr.edu
 
-Emily Mai : cmai007@ucr.edu
+	Emily Mai : cmai007@ucr.edu
 
 
 Title: Pantry to-go (tentatively)
