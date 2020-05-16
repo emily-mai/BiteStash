@@ -36,7 +36,7 @@ Using a factory we will allow the client to be able to create a list of Item*. T
 
 ![](images/FactoryPattern.png)
 
-## Composite
+## Composite:
 
 Using a composite design on the list that factory creates will allow us to add filtering to the list. This will allow us to filter via alphabetically, by location or a mix of the two. The class will have a vector where it will store the list. The base should display the list and the composite will be able to sort the list. The base class will have ways of adding or removing items. While the composite will only filter.
 
