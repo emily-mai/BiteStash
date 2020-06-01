@@ -3,13 +3,11 @@
 
 #include "item.h"
 
-
-
 Item::Item(std::string name, Location locate)
 {
    itemName = name;
    myLocation = locate;
-   description = name + "\nLocated in " + getStringEnum(locate) + "\n";
+   description = name + "\nLocated in the " + getStringEnum(locate) + "\n";
 }
 
 std::string Item::getStringEnum(Location locate)
