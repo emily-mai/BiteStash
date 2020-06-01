@@ -2,6 +2,7 @@
 
 #include "item_test.hpp"
 #include "ItemExp_test.hpp"
+#include "itemQuantity_test.hpp"
 
 int main(int argc, char **argv) 
 {
