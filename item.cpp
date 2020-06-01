@@ -3,25 +3,26 @@
 
 #include "item.h"
 
+
+
 Item::Item(std::string name, Location locate)
 {
    itemName = name;
    myLocation = locate;
-   description = name + ", " + getStringEnum(locate);
+   description = name + "\nLocated in " + getStringEnum(locate) + "\n";
 }
 
-Item::getStingEnum(Location locate)
+std::string Item::getStringEnum(Location locate)
 {
-   switch locate
+   switch (locate)
 	{
 	   case Freezer: return "Freezer";
 	   case Fridge: return "Fridge";
 	   case Pantry: return "Pantry";
-	   default: throw Exception("Not a proper location");
 	}
 }
 
-Item::std::string getDescription()
+std::string  Item::getDescription()
 {   
     return description;
 }

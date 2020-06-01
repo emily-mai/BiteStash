@@ -1,15 +1,16 @@
-#ifndef Item_H
-#define Item_H
+#ifndef ITEM_H
+#define ITEM_H
 
-enum Location{Fridge, Freezer, Pantry};
+enum Location {Fridge, Freezer, Pantry};
 
 class Item
 {
 public:
+	Item() { };
 	Item(std::string, Location);
-	std::string getDescription();
+	virtual std::string getDescription();
 
-private:
+protected:
 	std::string itemName;
 	Location myLocation;
 	std::string description;
