@@ -25,5 +25,4 @@ TEST(expirationTest,BreadExp)
    Expiration* test = new Expiration(bread, "June 9th, 2020");
    EXPECT_EQ(test->getDescription(), "Bread\nLocated in the Pantry\nExpiration date: June 9th, 2020\n");
 }
-
 #endif

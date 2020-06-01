@@ -3,8 +3,6 @@
 
 #include "item.h"
 
-
-
 Item::Item(std::string name, Location locate)
 {
    itemName = name;
