@@ -35,7 +35,7 @@ void List:: display()
    int k = 1;
    for(int i = 0; i < myList.size(); i++)
    {
-	std::cout << k << ".) " << myList.at(i)->getName() << " is located in the " << myList.at(i)->getLocation() << ".\n";
+	std::cout << k << ".) " << myList.at(i)->getName() << " in the " << myList.at(i)->getLocation() << ".\n";
 	k++;
    }
 }

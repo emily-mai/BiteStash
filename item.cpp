@@ -29,6 +29,14 @@ std::string Item::getName()
 {	
     return itemName;
 }
-
-
+/*
+bool Item::operator <(const Item& a)
+{
+   if (this->getName() < a.itemName )
+	{
+	   return true;
+	}
+   else {return false;}
+}
+*/
 #endif

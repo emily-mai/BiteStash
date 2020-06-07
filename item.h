@@ -11,7 +11,6 @@ public:
 	std::string getName();
 	std::string getLocation();
 	virtual std::string getDescription();
-
 protected:
 	std::string itemName;
 	Location myLocation;

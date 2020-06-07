@@ -11,11 +11,9 @@
 class List
 {
 public:
-   //std::vector <Item*> myList;
    std::vector <Item*> myFridgeList;
    std::vector <Item*> myFreezerList;
    std::vector <Item*> myPantryList;
-//public:
    std::vector <Item*> myList;
    List() { };
    void addItem(Item*);
