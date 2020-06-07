@@ -2,16 +2,19 @@
 #define LISTA_H
 
 #include "list.cpp"
+#include <vector>
+#include <string>
+#include <cstring>
 
 class ListA: public List
 {
 private:
    List* val;
-   bool myFunction(Item* a, Item* b ) {return a->getName() < b->getName();};
-   //void merge( );
-   //void mergeSort();
+   bool myFunction(Item* , Item* );
+   void merge(std::vector<Item*>&, int,int,int );
+   void mergeSort(std::vector<Item*>&,int,int );
 public:
-   ListA(List* a) {val = a; };
+   ListA(List* a) {val = a;};
    void sort();
    void display();
 };

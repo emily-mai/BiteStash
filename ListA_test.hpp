@@ -18,11 +18,11 @@ TEST(alphebetSortTest, attempt1)
    myList->addItem(tomatoe);
    myList->addItem(rice);
    myList->addItem(iceCream);
-   //myList->display();
    ListA* test = new ListA(myList);
-   test->display();
    test->sort();
    test->display();
 }
+
+
 
 #endif
