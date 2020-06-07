@@ -7,12 +7,12 @@ Item::Item(std::string name, Location locate)
 {
    itemName = name;
    myLocation = locate;
-   description = name + "\nLocated in the " + getStringEnum(locate) + "\n";
+   description = name + "\nLocated in the " + getLocation() + "\n";
 }
 
-std::string Item::getStringEnum(Location locate)
+std::string Item::getLocation()
 {
-   switch (locate)
+   switch (myLocation)
 	{
 	   case Freezer: return "Freezer";
 	   case Fridge: return "Fridge";
@@ -25,7 +25,10 @@ std::string  Item::getDescription()
     return description;
 }
 
-
+std::string Item::getName() 
+{	
+    return itemName;
+}
 
 
 #endif
