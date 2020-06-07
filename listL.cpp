@@ -6,9 +6,11 @@
 
 void listL::sort() 
 {
+    //std::cout << val->myList.size() << "\n";
     for(int i = 0; i < val->myList.size(); i++)
     {
 	Item* item = val->myList.at(i);
+	//std::cout << item->getName() << "\n";
 	if(item->getLocation() == "Fridge")
         {
 		myFridgeList.push_back(item);
@@ -26,6 +28,7 @@ void listL::sort()
 
 void listL::display()
 {
+   //std::cout << &val->myList << "\n";
    std::cout << "Fridge items:\n";
    for(int i = 0; i < myFridgeList.size(); ++i) 
    {

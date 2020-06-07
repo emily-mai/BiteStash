@@ -2,6 +2,7 @@
 #define LISTL_TEST_HPP
 #include "item.cpp"
 #include "list.cpp"
+#include "listA.cpp"
 #include "listL.cpp"
 
 TEST(LocationSortTest, printingList)
@@ -42,9 +43,12 @@ TEST(LocationSortTest, printingScatteredList)
    myList->addItem(iceCream);
    myList->addItem(fish);
    myList->display();
-   listL* test = new listL(myList);
+   ListA* test = new ListA(myList);
    test->sort();
    test->display();
+   listL* test1 = new listL(test);
+   test1->sort();
+   test1->display();
 }
 
 #endif

@@ -6,6 +6,7 @@
 #include "ItemCategory_test.hpp"
 #include "ListL_test.hpp"
 #include "ListA_test.hpp"
+
 int main(int argc, char **argv) 
 {
   ::testing::InitGoogleTest(&argc, argv);

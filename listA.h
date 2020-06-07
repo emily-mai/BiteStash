@@ -10,12 +10,13 @@
 class ListA: public List
 {
 private:
-   List* val;
+   //List* val;
    std::vector <Item*> myItems;
    bool myFunction(Item* , Item* );
    void merge(std::vector<Item*>&, int,int,int );
    void mergeSort(std::vector<Item*>&,int,int );
 public:
+   List* val;
    ListA(List* a) {val = a;};
    void sort();
    void display();
