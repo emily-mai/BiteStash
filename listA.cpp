@@ -5,9 +5,13 @@
 #include <vector>
 #include <algorithm>
 
-void ListA::sort()
+void ListA::sort( )
 {
    mergeSort(val->myList, 0, val->myList.size() - 1);
+   for (int i = 0; i < val->myList.size(); i++)
+   {
+	myItems.push_back(val->myList.at(i));
+   }
 }
 
 void ListA:: display()
