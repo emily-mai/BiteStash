@@ -17,6 +17,7 @@ public:
    void deleteList(std::string);
    void addList(std::string);
    void displayList(List*);
+   void displayList(std::string);
 private:
    void addItem(List*);
    void removeItem(List*);

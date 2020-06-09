@@ -192,4 +192,28 @@ void Factory::displayList(List* myList)
    myList->display();
 }
 
+void Factory::displayList(std::string listName)
+{
+   std::ifstream inFile;
+   inFile.open(listName + ".txt");
+   if(!inFile.is_open()) 
+   {
+	std::cout << "Error: cannot open file: " << listName << ".txt.\n";
+   }
+   List* myList = new List();
+   std::string dummy;
+   std::getline(inFile, dummy, '\n');
+   while(!inFile.eof())
+   {
+	Item* temp1 = new Item();
+	std::getline(inFile, temp1->itemName);
+	std::getline(inFile, temp1->location);
+	std::getline(inFile,temp1->description, '\t');
+	myList->addItem(temp1);
+	if (inFile.eof()) {myList->myList.pop_back(); }
+   }
+   displayList(myList);
+   inFile.close();
+}
+
 #endif
