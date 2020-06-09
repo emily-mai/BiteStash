@@ -14,4 +14,15 @@ std::string Quantity::getDescription()
 {
    return myItem->getDescription() + "Quantity: " + std::to_string(amount) + " " + Unit + "\n" ;
 }
+
+std::string Quantity::getName()
+{
+   return myItem->getName();
+}
+
+std::string Quantity::getLocation()
+{
+   return myItem->getLocation();
+}
+
 #endif

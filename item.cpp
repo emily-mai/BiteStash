@@ -6,19 +6,31 @@
 Item::Item(std::string name, Location locate)
 {
    itemName = name;
-   myLocation = locate;
-   location = getLocation();
+   myLocation = locate; 
+   if(locate == Freezer)
+   {
+	location = "Freezer";
+   }
+   else if(locate == Fridge)
+   {
+	location = "Fridge";
+   }
+   else 
+   {
+	location = "Pantry";
+   }
    description = name + "\nLocated in the " + getLocation() + "\n";
 }
 
 std::string Item::getLocation()
 {
-   switch (myLocation)
+   /*switch (myLocation)
 	{
 	   case Freezer: return "Freezer";
 	   case Fridge: return "Fridge";
 	   case Pantry: return "Pantry";
-	}
+	}*/
+    return location;
 }
 
 std::string  Item::getDescription()

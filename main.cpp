@@ -30,7 +30,10 @@ int main()
 
 	string entry;
 	Factory* myFac = new Factory();
-
+	if (choice < 1 || choice > 5) 
+	{
+	   cout << "Error: Invalid choice, try again" << endl;
+	}
 	while (choice != 5) 
 	{
 	   if (choice == 1)

@@ -13,5 +13,14 @@ std::string Expiration::getDescription()
    return myItem->getDescription() + "Expiration date: " + expiration +"\n" ;
 }
 
+std::string Expiration::getName() 
+{
+   return myItem->getName();
+}
+
+std::string Expiration::getLocation()
+{
+   return myItem->getLocation();
+}
 
 #endif

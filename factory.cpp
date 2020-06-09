@@ -46,9 +46,10 @@ void Factory::editList(std::string listName)
    remove ( a.c_str());
    std::ofstream myfile (listName+".txt", std::ios::out);
    myfile << '\n';
+   //std::cout << temp->myList.size() << '\n';
    for(int k = 0; k < temp->myList.size();k++)
    {
-	myfile << temp->myList.at(k)->itemName<< '\n' << temp->myList.at(k)->location<< '\n' << temp->myList.at(k)->description<< '\t';
+	myfile << temp->myList.at(k)->getName()<< '\n' << temp->myList.at(k)->getLocation()<< '\n' <<  temp->myList.at(k)->getDescription() << '\t';
    }
    myfile.close();
    inFile.close();
@@ -116,7 +117,7 @@ void Factory::addItem(List *myList)
       {
 	std::cout<< "Please add the date:\n";
 	std::getline(std::cin, date);
-	exp = new Expiration(temp, date);	
+	exp = new Expiration(temp, date);
       }
       char c = '0';
       std::string cat;

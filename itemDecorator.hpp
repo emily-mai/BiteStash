@@ -11,6 +11,8 @@ public:
    Decorator() { };
    Decorator(Item* food) : myItem(food) { };
    virtual std::string getDescription() { };  
+   virtual std::string getName() { };
+   virtual std::string getLocation() { };
 };
 
 

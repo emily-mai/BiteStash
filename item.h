@@ -11,8 +11,8 @@ class Item
 public:
 	Item() { };
 	Item(std::string, Location);
-	std::string getName();
-	std::string getLocation();
+	virtual std::string getName();
+	virtual std::string getLocation();
 	virtual std::string getDescription();
 //protected:
 	std::string itemName;

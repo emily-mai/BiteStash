@@ -13,6 +13,15 @@ std::string Category::getDescription()
    return myItem->getDescription() + "Category: " + itemType +"\n" ;
 }
 
+std::string Category::getName()
+{
+   return myItem->getName();
+}
+
+std::string Category::getLocation()
+{
+   return myItem->getLocation();
+}
 
 #endif
 
