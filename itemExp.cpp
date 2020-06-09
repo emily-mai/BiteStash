@@ -5,7 +5,7 @@
 
 Expiration::Expiration(Item* food, std::string expire):Decorator(food)
 {
-   expiration = expire;   
+   expiration = expire; 
 }
 
 std::string Expiration::getDescription()

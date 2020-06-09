@@ -73,7 +73,7 @@ void Factory::addList(std::string listName )
    myFile.close();
 }
 
-void Factory::addItem(List* myList)
+void Factory::addItem(List *myList)
 {
    int i = 0;
    std::string name;
@@ -116,7 +116,7 @@ void Factory::addItem(List* myList)
       {
 	std::cout<< "Please add the date:\n";
 	std::getline(std::cin, date);
-	Expiration* exp = new Expiration(temp, date);	
+	exp = new Expiration(temp, date);	
       }
       char c = '0';
       std::string cat;
@@ -129,11 +129,11 @@ void Factory::addItem(List* myList)
         std::getline(std::cin, cat);
 	if ( e == '1')
 	{
-	   Category* Cat = new Category(exp, cat);
+	   Cat = new Category(exp, cat);
 	}
 	else
 	{
-	   Category* Cat = new Category(temp,cat);
+	   Cat = new Category(temp,cat);
 	}
       }
       char q = '0';
@@ -152,15 +152,15 @@ void Factory::addItem(List* myList)
 
         if ( c == '1')
         {
-           Quantity* qty = new Quantity(Cat,val,unit);
+	   qty = new Quantity(Cat,val,unit);
         }
         else if ( e == '1' && c == '0')
         {
-           Quantity* qty = new Quantity(exp,val,unit);
+           qty = new Quantity(exp,val,unit);
         }
 	else
 	{
-	   Quantity* qty = new Quantity(temp,val,unit);
+	   qty = new Quantity(temp,val,unit);
 	}
       }
       if (q == '1' )
