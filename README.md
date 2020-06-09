@@ -43,8 +43,14 @@ Using a composite design on the list that factory creates will allow us to add f
 ![](images/CompositePattern%20(1).png)
 ## Report
 The goal of this program was to make a simple to use algorithm that will allow users to easily create an inventory of items that are in either the pantry, fridge or freezer. We also kept in mind the ability to expand from these locations. We did this by implementing three design patterns. The first design pattern we used was the decorator. Using the decorator design pattern we made a base class called item which contains a name, location and description. Description only takes information from the name and location but with the decorator we can add more. The decorators we used allowed us to add an expiration date, category or even quantity or a combination of the three. After we created this decorator we created a composite class. This was our list class. This included basic features like adding or removing an Item, sorting the list or even displaying said list. The sort specifically was what we made into a composite class. The list class takes in Items and adds them into the vector located in the list. Sorting can sort the list alphabetically or even by location or both. This sorting method is at worst an nlogn runtime. The output of the list will be the display which will display the elements inside the vector. The final design pattern we used was the factory design pattern. We used this to manipulate lists and to create a file to save the elements in the list. This helps create an interface for our program. It also allows the user to make changes to the list, sort the list or even delete a list. Our main function is the last part of the program and this solidifies the interface that the user works with. 
-## Screenshot Area
-something something dark side
+## Input screenshots
+![](images/option1.JPG)
+This is our menu which allows the user to create,edit,sort,remove, or display a list.
+![](images/option2.JPG)
+This is the process in which the user can input items inside a list.
+## Output screenshot
+![](images/option5.JPG)
+This is all elements in a list. These elements will be saved in a text file and can be reopened at anytime.
 ## Tutorial
 Pantry-to-go is a simple to use application.
 First git clone the repository into your system.
