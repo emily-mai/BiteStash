@@ -7,6 +7,7 @@ Item::Item(std::string name, Location locate)
 {
    itemName = name;
    myLocation = locate;
+   location = getLocation();
    description = name + "\nLocated in the " + getLocation() + "\n";
 }
 
@@ -29,14 +30,4 @@ std::string Item::getName()
 {	
     return itemName;
 }
-/*
-bool Item::operator <(const Item& a)
-{
-   if (this->getName() < a.itemName )
-	{
-	   return true;
-	}
-   else {return false;}
-}
-*/
 #endif

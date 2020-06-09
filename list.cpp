@@ -32,11 +32,10 @@ void List:: removeItem(std::string name)
 
 void List:: display()
 {
-   //std::cout << &myList << "\n";
    int k = 1;
    for(int i = 0; i < myList.size(); i++)
    {
-	std::cout << k << ".) " << myList.at(i)->getName() << " is located in the " << myList.at(i)->getLocation() << ".\n";
+	std::cout << k << ".) " << myList.at(i)->getDescription() << '\n';
 	k++;
    }
 }
