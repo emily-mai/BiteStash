@@ -252,19 +252,21 @@ void Factory::sortList(std::string listName)
    if (choice == '1')
    {
 	ListA* alphabetList = new ListA(myList);
+	alphabetList->sort();
 	std::string a = listName + ".txt";
         remove ( a.c_str());
         std::ofstream myfile (listName+".txt", std::ios::out);
         myfile << '\n';
-        for(int k = 0; k < alphabetList->myList.size();k++)
+        for(int k = 0; k < alphabetList->myItems.size();k++)
 	{
-	   myfile <<  alphabetList->myList.at(k)->getName()<< '\n' <<  alphabetList->myList.at(k)->getLocation()<< '\n' <<   alphabetList->myList.at(k)->getDescription() << '\t';
+	   myfile <<  alphabetList->myItems.at(k)->getName()<< '\n' <<  alphabetList->myItems.at(k)->getLocation()<< '\n' <<   alphabetList->myItems.at(k)->getDescription() << '\t';
 	}
 	myfile.close();
    }
    else if (choice == '2')
    {
 	listL* locationList = new listL(myList);
+	locationList->sort();
 	std::string a = listName + ".txt";
         remove ( a.c_str());
         std::ofstream myfile (listName+".txt", std::ios::out);
