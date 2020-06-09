@@ -15,9 +15,10 @@ int menu() {
    cout
 	<< "1. Create a list." << endl		
 	<< "2. Edit a list." << endl
-	<< "3. Remove a list" << endl
-	<< "4. Display a list" << endl
-	<< "5. Quit" << endl;
+	<< "3. Sort a list." << endl
+	<< "4. Remove a list" << endl
+	<< "5. Display a list" << endl
+	<< "6. Quit" << endl;
 	cin >> choice;
 	cin.clear();
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -30,11 +31,11 @@ int main()
 
 	string entry;
 	Factory* myFac = new Factory();
-	if (choice < 1 || choice > 5) 
+	if (choice < 1 || choice > 6) 
 	{
 	   cout << "Error: Invalid choice, try again" << endl;
 	}
-	while (choice != 5) 
+	while (choice != 6) 
 	{
 	   if (choice == 1)
 	   {
@@ -51,14 +52,22 @@ int main()
 		cout << endl;
 		myFac->editList(entry);	
 	   }
-	   else if (choice == 3) 
+	   else if (choice == 3)
+           {
+                cout << "Enter name of list you would like to sort: ";
+                getline(cin, entry);
+                cout << endl;
+                myFac->sortList(entry);
+           }
+
+	   else if (choice == 4) 
 	   {
 		cout << "Enter name of list you would like to remove: ";
                 getline(cin, entry);
                 cout << endl;
                 myFac->deleteList(entry);
 	   }
-	   else if (choice == 4) 
+	   else if (choice == 5) 
 	   {
 		cout << "Enter name of list you would like to display: ";
                 getline(cin, entry);
