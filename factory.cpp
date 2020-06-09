@@ -6,12 +6,17 @@
 #include <fstream>
 #include <stdio.h>
 #include <string>
+#include <stdexcept>
 
 void Factory::editList(std::string listName)
 {
    std::ifstream inFile;
    inFile.open(listName + ".txt");
-   if( !inFile.is_open()) {std::cout<<"cannot open file: " << listName << ".txt\n";}
+   if( !inFile.is_open()) 
+   {
+	std::cout<<"cannot open file: " << listName << ".txt\n";
+	throw std::invalid_argument( "Not a valid file name\n");
+   }
    List* temp = new List();
    std::string dummy;
    std::getline(inFile, dummy, '\n');
@@ -200,6 +205,8 @@ void Factory::displayList(std::string listName)
    if(!inFile.is_open()) 
    {
 	std::cout << "Error: cannot open file: " << listName << ".txt.\n";
+	throw std::invalid_argument( "Not a valid file name\n");
+
    }
    List* myList = new List();
    std::string dummy;
@@ -217,4 +224,67 @@ void Factory::displayList(std::string listName)
    inFile.close();
 }
 
+void Factory::sortList(std::string listName)
+{
+    std::ifstream inFile;
+   inFile.open(listName + ".txt");
+   if(!inFile.is_open())
+   {
+        std::cout << "Error: cannot open file: " << listName << ".txt.\n";
+	throw std::invalid_argument( "Not a valid file name\n");
+   }
+   List* myList = new List();
+   std::string dummy;
+   std::getline(inFile, dummy, '\n');
+   while(!inFile.eof())
+   {
+        Item* temp1 = new Item();
+        std::getline(inFile, temp1->itemName);
+        std::getline(inFile, temp1->location);
+        std::getline(inFile,temp1->description, '\t');
+        myList->addItem(temp1);
+        if (inFile.eof()) {myList->myList.pop_back(); }
+   }
+   char choice = '0';
+   std::cout<< "Press 1 to sort the list alphabetically\nPress 2 to sort the list by location\nPress any other key to quit\n";
+   std::cin>>choice;
+   std::cin.ignore(256,'\n');
+   if (choice == '1')
+   {
+	ListA* alphabetList = new ListA(myList);
+	std::string a = listName + ".txt";
+        remove ( a.c_str());
+        std::ofstream myfile (listName+".txt", std::ios::out);
+        myfile << '\n';
+        for(int k = 0; k < alphabetList->myList.size();k++)
+	{
+	   myfile <<  alphabetList->myList.at(k)->getName()<< '\n' <<  alphabetList->myList.at(k)->getLocation()<< '\n' <<   alphabetList->myList.at(k)->getDescription() << '\t';
+	}
+	myfile.close();
+   }
+   else if (choice == '2')
+   {
+	listL* locationList = new listL(myList);
+	std::string a = listName + ".txt";
+        remove ( a.c_str());
+        std::ofstream myfile (listName+".txt", std::ios::out);
+        myfile << '\n';
+        for(int k = 0; k < locationList->myFridgeList.size();k++)
+        {
+           myfile <<  locationList->myFridgeList.at(k)->getName()<< '\n' <<  locationList->myFridgeList.at(k)->getLocation()<< '\n' <<   locationList->myFridgeList.at(k)->getDescription() << '\t';
+        }
+
+	 for(int k = 0; k < locationList->myFreezerList.size();k++)
+        {
+           myfile <<  locationList->myFreezerList.at(k)->getName()<< '\n' <<  locationList->myFreezerList.at(k)->getLocation()<< '\n' <<   locationList->myFreezerList.at(k)->getDescription() << '\t';
+        }
+
+	 for(int k = 0; k < locationList->myPantryList.size();k++)
+        {
+           myfile <<  locationList->myPantryList.at(k)->getName()<< '\n' <<  locationList->myPantryList.at(k)->getLocation()<< '\n' <<   locationList->myPantryList.at(k)->getDescription() << '\t';
+        }
+	myfile.close();
+   }
+   inFile.close();
+}
 #endif
